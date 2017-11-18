@@ -19,4 +19,13 @@ public class Cell {
     public int getNeighbourCount() {
         return neighbourCount;
     }
+
+    public void evoluteMe() {
+        if(neighbourCount < 2 || neighbourCount > 3) {
+            this.alive = false;
+        }
+        if(neighbourCount == 3) {
+            this.alive = true;
+        }
+    }
 }
