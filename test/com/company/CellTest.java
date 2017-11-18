@@ -18,7 +18,7 @@ public class CellTest {
     void newDeadCellIsCreated() {
         assertEquals(cell.isAlive(), false);
     }
-    
+
     @Test
     void setNeighbourCount() {
         cell.setNeighbourCount(3);
