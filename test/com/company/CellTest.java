@@ -20,6 +20,12 @@ public class CellTest {
     }
 
     @Test
+    void newLivingCellIsCreated() {
+        Cell cell = new Cell().living();
+        assertEquals(true, cell.isAlive());
+    }
+
+    @Test
     void setNeighbourCount() {
         cell.setNeighbourCount(3);
         assertEquals(cell.getNeighbourCount(), 3);

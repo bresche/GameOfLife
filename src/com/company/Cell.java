@@ -4,6 +4,11 @@ public class Cell {
     private boolean alive;
     private int neighbourCount;
 
+    public Cell living() {
+        this.setAlive(true);
+        return this;
+    }
+
     public boolean isAlive() {
         return alive;
     }
