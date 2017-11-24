@@ -51,4 +51,33 @@ class GridTest {
         assertEquals(8, theLivingCellToCheck.getNeighbourCount());
     }
 
+    /*
+
+    - x -               - - -
+    - x -       ->      x x -
+    - x x               - x x
+
+     */
+    @Test
+    void nextCellGenerationHasProperCells() {
+        Grid grid = new Grid(3,3);
+
+        grid.addCellAtPosition(new Cell().living(), 0, 1);
+        grid.addCellAtPosition(new Cell().living(), 1, 1);
+        grid.addCellAtPosition(new Cell().living(), 2, 1);
+        grid.addCellAtPosition(new Cell().living(), 2, 2);
+
+        grid.generateNextCellGeneration();
+
+        assertEquals(grid.getCellAtPosition(0,0).isAlive(), false);
+        assertEquals(grid.getCellAtPosition(1,0).isAlive(), true);
+        assertEquals(grid.getCellAtPosition(2,0).isAlive(), false);
+        assertEquals(grid.getCellAtPosition(0,1).isAlive(), false);
+        assertEquals(grid.getCellAtPosition(1,1).isAlive(), true);
+        assertEquals(grid.getCellAtPosition(2,1).isAlive(), true);
+        assertEquals(grid.getCellAtPosition(0,2).isAlive(), false);
+        assertEquals(grid.getCellAtPosition(1,2).isAlive(), false);
+        assertEquals(grid.getCellAtPosition(2,2).isAlive(), true);
+    }
+
 }

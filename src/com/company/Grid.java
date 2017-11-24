@@ -22,6 +22,17 @@ public class Grid {
         }
     }
 
+    public void generateNextCellGeneration() {
+
+        countNeighboursForAllCellsInGrid();
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                gridArray[i][j].evoluteMe();
+            }
+        }
+    }
+
     public void addCellAtPosition(Cell cell, int row, int col) {
         gridArray[row][col] = cell;
     }
@@ -66,5 +77,9 @@ public class Grid {
 
     private boolean boundariesAreValid(int row, int column) {
         return row >= 0 && row < rows && column >= 0 && column < columns;
+    }
+
+    public Cell getCellAtPosition(int row, int column) {
+        return gridArray[row][column];
     }
 }
