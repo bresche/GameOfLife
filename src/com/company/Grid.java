@@ -29,13 +29,13 @@ public class Grid {
     public void countNeighboursForAllCellsInGrid() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                int numberOfNeighbours = countNeighbourCells(i, j);
+                int numberOfNeighbours = countNeighbourCellsForCellAtPosition(i, j);
                 gridArray[i][j].setNeighbourCount(numberOfNeighbours);
             }
         }
     }
 
-    private int countNeighbourCells(int row, int column) {
+    private int countNeighbourCellsForCellAtPosition(int row, int column) {
         int neighbourCount = 0;
 
         for (int i = -1; i < 2; i++) {
