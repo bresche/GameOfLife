@@ -4,7 +4,15 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class GridTest {
+class GridTest
+{
+
+    @Test
+    void gridDimensionsAreSet() {
+        Grid grid = new Grid(3,5);
+        assertEquals(3, grid.getRows());
+        assertEquals(5, grid.getColumns());
+    }
 
     @Test
     void cellHasNoLivingNeighbours_neighbourCountIsZero() {
