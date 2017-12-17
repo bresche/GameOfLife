@@ -22,26 +22,11 @@ public class Main {
         grid.addCellAtPosition(new Cell().living(), 4, 3);
         grid.addCellAtPosition(new Cell().living(), 4, 4);
 
-        // ToDo: better visualisation, Matthias ?! ;-)
+        Visualisation visualisation = new Visualisation(grid);
+
         for (int i = 0; i < 10; i++) {
-
-            System.out.println("Generation: " + i);
-
-            for (int row = 0; row < grid.getRows(); row++) {
-                for (int column = 0; column < grid.getColumns(); column++) {
-
-                    if (grid.getCellAtPosition(row, column).isAlive()) {
-                        System.out.print(" x ");
-                    } else {
-                        System.out.print(" _ ");
-                    }
-
-                }
-                System.out.println();
-            }
-
-            grid.generateNextCellGeneration();
-
+            visualisation.clear();
+            visualisation.drawNextGeneration(grid);
         }
     }
 }
