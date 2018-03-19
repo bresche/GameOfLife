@@ -1,8 +1,14 @@
 package de.balvi.gol;
 
-public class example {
+public class Example {
 
-    public String getExampleText() {
-        return "Example text."
+    private String exampleTextString;
+
+    public String exampleText() {
+        return "Example text.";
+    }
+
+    public void setExampleTextString(String exampleTextString) {
+        this.exampleTextString = exampleTextString;
     }
 }
