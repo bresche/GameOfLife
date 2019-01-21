@@ -22,4 +22,5 @@ public class ExampleTest {
 
         assertEquals(example.exampleText(), text);
     }
+
 }

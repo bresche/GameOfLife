@@ -18,9 +18,7 @@ public class Visualisation {
             frame.addNewLine();
         }
 
-
     }
-
 
     public void clear() {
         try {

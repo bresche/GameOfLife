@@ -1,5 +1,6 @@
 package de.balvi.gol;
 
+
 import de.balvi.gol.visualisation.Visualisation;
 
 public class Main {
